@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListNotesActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:orientation="vertical" >
+
+
+        <EditText
+            android:id="@+id/edit_note_title"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoCorrect"
+            android:textColor="@android:color/primary_text_light"
+            tools:text="Note title"
+            android:hint= "Note title"
+            android:lines="1"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"/>
+
+        <EditText
+            android:id="@+id/edit_note_description"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:textColor="@android:color/primary_text_light"
+            android:hint= "Note description"
+            tools:text="Description. Lorem ipsum dolor sit amet consectetur adipiscing, elit cubilia nam eu odio fringilla platea, imperdiet donec nascetur nisi eleifend. Scelerisque nisl nostra eu in montes vestibulum ad hendrerit, mauris nam cubilia torquent interdum pellentesque pulvinar sem curabitur" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/edit_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@android:color/white"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+</android.support.design.widget.CoordinatorLayout>
