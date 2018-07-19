@@ -130,14 +130,14 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
 
 
     @Override
-    public void onLongClickListener(Note mNote) {
-       deleteNote(mNote);
+    public void onLongClickListener(Note note) {
+       deleteNote(note);
         }
 
     /**
      * DeleteNote is called when we want to double check the delete of a note from the database
      */
-    public void deleteNote(final Note mNote) {
+    public void deleteNote(final Note note) {
 
         final AlertDialog.Builder b = new AlertDialog.Builder(this);
         b.setIcon(android.R.drawable.ic_dialog_alert);
@@ -148,7 +148,7 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
                             @Override
                             public void run() {
-                                mDb.noteDao().deleteNote(mNote);
+                                mDb.noteDao().deleteNote(note);
                             }
                         });
                     }
