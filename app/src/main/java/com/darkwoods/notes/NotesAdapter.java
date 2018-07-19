@@ -50,7 +50,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         mContext = context;
         mItemClickListener = listener;
 
-
     }
 
     /**
@@ -168,21 +167,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         @Override
         public boolean onLongClick(View view) {
             Note mNote = mNotesList.get(getAdapterPosition());
-//            int elementId = mNotesList.get(getAdapterPosition()).getId();
-
             mItemClickListener.onLongClickListener(mNote);
             return true;
         }
-
-
     }
-
-
-
-
-
-
-
-
-
 }
