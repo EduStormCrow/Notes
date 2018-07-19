@@ -35,7 +35,6 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
     // Member variables for the adapter and RecyclerView
     private RecyclerView mRecyclerView;
     private NotesAdapter mAdapter;
-
     private AppDatabase mDb;
 
     @Override
@@ -60,7 +59,6 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         mRecyclerView.setAdapter(mAdapter);
-
 
         DividerItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), VERTICAL);
         mRecyclerView.addItemDecoration(decoration);
@@ -132,9 +130,7 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
 
     @Override
     public void onLongClickListener(Note mNote) {
-
-        //Note mNote = mAdapter.getNoteOnPosition(itemId);
-        deleteNote(mNote);
+       deleteNote(mNote);
         }
 
     /**
