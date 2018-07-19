@@ -71,8 +71,8 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         // TODO Add texts
         
         // FAB for create note
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton addNoteFAB  = (FloatingActionButton) findViewById(R.id.addNoteFAB);
+        addNoteFAB .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ListNotesActivity.this,
@@ -80,6 +80,7 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
                 startActivity(myIntent);
             }
         });
+
 
         mDb = AppDatabase.getInstance(getApplicationContext());
         setupViewModel();
