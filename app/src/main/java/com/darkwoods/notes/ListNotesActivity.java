@@ -68,7 +68,7 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         // TODO See how to auto save once you finished adding options
         // TODO move all hardcoded text to strings
         // TODO Sync with firebase
-        // TODO Add texts
+        // TODO Add tests
         
         // FAB for create note
         FloatingActionButton addNoteFAB  = (FloatingActionButton) findViewById(R.id.addNoteFAB);
@@ -80,7 +80,6 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
                 startActivity(myIntent);
             }
         });
-
 
         mDb = AppDatabase.getInstance(getApplicationContext());
         setupViewModel();
@@ -116,7 +115,6 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

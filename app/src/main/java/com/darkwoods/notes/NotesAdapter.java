@@ -1,22 +1,16 @@
 package com.darkwoods.notes;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.darkwoods.notes.database.AppDatabase;
-import com.darkwoods.notes.database.AppExecutors;
 import com.darkwoods.notes.database.Note;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -84,14 +78,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteUpdateAtView.setText(updatedAt);
     }
 
-    /**
-     * Returns the note on position x
-     */
-
-    public Note getNoteOnPosition(int pos){
-        return mNotesList.get(pos);
-    }
-
      /**
      * Returns the number of items to display.
      */
@@ -107,7 +93,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         return mNotesList;
     }
 
-
     /**
      * When data changes, this method updates the list of Notes
      * and notifies the adapter to use the new values on it
@@ -119,11 +104,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     public interface ItemClickListener {
         void onItemClickListener(int itemId);
-
-        void onLongClickListener(Note mNote);
+        void onLongClickListener(Note note);
     }
 
-    
+
     // Inner class for creating ViewHolders
     class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
 
@@ -134,12 +118,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         /**
          * Constructor for the NotesViewHolders.
-         *
          * @param itemView The view inflated in onCreateViewHolder
          */
         public NotesViewHolder(View itemView) {
             super(itemView);
-
             noteTitleView = itemView.findViewById(R.id.note_title);
             noteUpdateAtView = itemView.findViewById(R.id.note_update_at);
             noteDescriptionView = itemView.findViewById(R.id.note_description);
