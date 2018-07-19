@@ -15,20 +15,15 @@ public interface NoteDao {
     @Query("SELECT * FROM Note ORDER BY creation_date desc")
     LiveData<List<Note>> loadAllNotes();
 
-       @Insert
+    @Insert
     void insertNote(Note note);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateNote(Note note);
-
 
     @Delete
     void deleteNote(Note note);
 
     @Query("SELECT * FROM Note WHERE id = :id")
     LiveData<Note> loadNoteById(int id);
-
-
 }
-
-
