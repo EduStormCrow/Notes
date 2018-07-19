@@ -84,8 +84,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteUpdateAtView.setText(updatedAt);
     }
 
-
-
     /**
      * Returns the note on position x
      */
@@ -93,10 +91,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     public Note getNoteOnPosition(int pos){
         return mNotesList.get(pos);
     }
-
-
-
-
 
      /**
      * Returns the number of items to display.
@@ -114,7 +108,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
 
-
     /**
      * When data changes, this method updates the list of Notes
      * and notifies the adapter to use the new values on it
@@ -130,8 +123,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         void onLongClickListener(Note mNote);
     }
 
-
-
+    
     // Inner class for creating ViewHolders
     class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
 
@@ -139,7 +131,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         TextView noteTitleView;
         TextView noteUpdateAtView;
         TextView noteDescriptionView;
-
 
         /**
          * Constructor for the NotesViewHolders.
@@ -154,10 +145,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             noteDescriptionView = itemView.findViewById(R.id.note_description);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
-
         }
-
-
+        
         @Override
         public void onClick(View view) {
             int elementId = mNotesList.get(getAdapterPosition()).getId();
