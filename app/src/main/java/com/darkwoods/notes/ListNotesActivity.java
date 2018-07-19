@@ -21,18 +21,12 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.darkwoods.notes.database.AppDatabase;
 import com.darkwoods.notes.database.AppExecutors;
 import com.darkwoods.notes.database.Note;
 import com.darkwoods.notes.utils.VisualUtility;
-
 import java.util.List;
-
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
-
-
-
 
 public class ListNotesActivity extends AppCompatActivity implements NotesAdapter.ItemClickListener  {
 
@@ -44,12 +38,10 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
 
     private AppDatabase mDb;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_notes);
-
 
         // Set the RecyclerView to its corresponding view
         mRecyclerView = findViewById(R.id.recyclerViewNotes);
@@ -57,10 +49,6 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         // Set the layout for the RecyclerView to be a linear layout, which measures and
         // positions items within a RecyclerView into a linear list
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-
 
         // Initialize the adapter and attach it to the RecyclerView
         mAdapter = new NotesAdapter (this, this);
@@ -77,15 +65,13 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         DividerItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), VERTICAL);
         mRecyclerView.addItemDecoration(decoration);
 
-        //TODO agregar un fondo cuando no hay elementos
-        // TODO cambiar el nombre en el edit
-        // TODO ver como darle save si estas ingresando opciones
-        // TODO internacionalizar los textos, pasarlos a string
-        // TODO Sincronizar con firebase o google drive
-        // TODO Agregar tests
-        // TODO implementar validacion basica en el edit de elemento como para que no sea blanco
-
-
+        // TODO Add background when there are no elements to make the user add a new note
+        // TODO Change name of button when editing
+        // TODO See how to auto save once you finished adding options
+        // TODO move all hardcoded text to strings
+        // TODO Sync with firebase
+        // TODO Add texts
+        
         // FAB for create note
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -112,16 +98,11 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         });
     }
 
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_list_notes, menu);
-
-        //TODO Posibilidad de eliminar todas las notas
-
+        //TODO Add element to delete all notes
         return true;
     }
 
@@ -157,7 +138,7 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         }
 
     /**
-     * onDeleteNote is called when we want double check the delete of a note form the database
+     * DeleteNote is called when we want to double check the delete of a note from the database
      */
     public void deleteNote(final Note mNote) {
 
@@ -231,8 +212,3 @@ public class ListNotesActivity extends AppCompatActivity implements NotesAdapter
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }
-
-
-
-
-
